@@ -1,0 +1,12 @@
+---
+# tasks file for chmduquesne.haproxy
+- name: get latest haproxy
+  package: name=haproxy state=latest
+
+- name: configure /etc/haproxy/haproxy.cfg
+  template:
+    src: templates/etc/haproxy/haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+    owner: root
+    group: root
+    mode: 0644
