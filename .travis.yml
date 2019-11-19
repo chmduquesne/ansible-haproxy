@@ -18,6 +18,9 @@ install:
   # Check ansible version
   - ansible --version
 
+  # Link the role
+  - ln -s $(basename $PWD) ../chmduquesne.haproxy
+
   # Create ansible.cfg with correct roles_path
   - printf '[defaults]\nroles_path=../' >ansible.cfg
 
